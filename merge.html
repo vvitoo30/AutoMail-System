@@ -295,20 +295,21 @@
         }
 
         // Function to remove all input fields and reset visibility
-        function removeAllInputs() {
-            for (let i = 1; i <= 10; i++) {
-                const fileInput = document.getElementById('pdf' + i);
-                const fileInputLabel = document.getElementById('label' + i);
-                const fileNameSpan = document.getElementById('file' + i + 'Name');
-                fileInput.value = ''; // Clear the input value
-                fileInputLabel.textContent = ''; // Clear the file name display
-                fileNameSpan.textContent = ''; // Clear the file name display
-                if (i > 2) {
-                    fileInput.style.display = 'none'; // Hide input fields beyond the first two
-                    fileInputLabel.style.display = 'none'; // Hide labels for input fields beyond the first two
-                }
+            function removeAllInputs() {
+        for (let i = 1; i <= 10; i++) {
+            const fileInput = document.getElementById('pdf' + i);
+            const fileInputLabel = document.getElementById('label' + i);
+            const fileNameSpan = document.getElementById('file' + i + 'Name');
+            fileInput.value = ''; // Clear the input value
+            fileInputLabel.textContent = ''; // Clear the file name display
+            fileNameSpan.textContent = ''; // Clear the file name display
+            // Hide input fields and labels for input fields beyond the first two
+            if (i > 2) {
+                const inputDiv = document.getElementById('input' + i);
+                inputDiv.style.display = 'none';
             }
         }
+    }
     </script>
 </body>
 </html>
