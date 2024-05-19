@@ -493,7 +493,13 @@
             window.history.back();
         }
     </script>
+    <script>
+        function changeFont(fontName) {
+            const contentElements = document.querySelectorAll('.content, .signature');
+            contentElements.forEach(element => {
+                element.style.fontFamily = fontName;
+            });
+        }
+    </script>
 </body>
 </html>
-
-
